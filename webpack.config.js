@@ -42,6 +42,7 @@ module.exports = {
           'postcss-loader', // parse CSS and add vendor prefixes to CSS rules
           'sass-loader', // compiles Sass to CSS, using Node Sass by default
         ],
+       // exclude: /node_modules/,  // <--- вот это
       },
 
       // Include fonts from css
@@ -90,6 +91,11 @@ module.exports = {
       ]
     })
   ],
+watchOptions: {
+    ignored: /node_modules/, // Не следить за node_modules
+    poll: 1000,              // Уменьшает нагрузку на файловую систему
+  },
+
   devServer: {
     static: path.join(__dirname, 'dist'), // Updated from contentBase
     compress: true,
@@ -97,6 +103,9 @@ module.exports = {
     hot: true, // Enable Hot Module Replacement
     watchFiles: {
       paths: ['src/**/*'], // Watch for changes in source files
+     /* options: {
+        ignored: /node_modules/ //  я добавила
+      }*/
     },
     client: {
       overlay: true // Show errors and warnings in the browser

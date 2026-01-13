@@ -7,10 +7,355 @@
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
-    <img src="./img/webpack.svg" alt="Webpack Logo" width="200px" />
-    <h3>Welcome to Webpack 5 starter </h3>
+    <!-- <img src="./img/webpack.svg" alt="Webpack Logo" width="200px" />
+    <h3>Welcome to Webpack 5 starter 777 </h3>-->
+    <div class="page">
+      <div class="container">
+        <!---------------HEADER-------------------->
+        <div class="header open">
+          <div class="header__inner">
+            <div class="header__left-icons">
+              <button class="header__hamburger" aria-label="Open menu">
+                <img
+                  class="header__hamburger-box"
+                  src="img/back.svg"
+                  alt="icon"
+                />
+                <img
+                  class="header__hamburger-button"
+                  src="img/icon.svg"
+                  alt="icon"
+                />
+              </button>
+              <img
+                class="divider divider--burger"
+                src="img/divider.svg"
+                alt="divider"
+              />
+
+              <a class="header__logo" href="/">
+                <img src="img/Group.svg" alt="logo" />
+                <img
+                  class="divider divider--logo"
+                  src="img/divider.svg"
+                  alt="logo"
+                />
+              </a>
+            </div>
+
+            <nav class="header__menu">
+              <ul class="header__icons header__menu-icons">
+                <li>
+                  <a class="header__menu-icon" href="/"
+                    ><img src="img/call.svg" alt="call"
+                  /></a>
+                </li>
+                <li>
+                  <a class="header__menu-icon" href="/"
+                    ><img src="img/chat.svg" alt="chat"
+                  /></a>
+                </li>
+                <li>
+                  <a class="header__menu-icon" href="/"
+                    ><img src="img/profile.svg" alt="profile"
+                  /></a>
+                </li>
+              </ul>
+
+              <ul class="header__list">
+                <img
+                  class="divider divider--setting"
+                  src="img/divider.svg"
+                  alt=""
+                />
+                <span>Оставить заявку</span>
+                <li>
+                  <a class="header__menu-item" href="/"
+                    ><img src="img/repair.svg" alt="settings"
+                  /></a>
+                </li>
+                <span>Статус ремонта</span>
+                <li>
+                  <a class="header__menu-item" href="/"
+                    ><img src="img/search.svg" alt="search"
+                  /></a>
+                </li>
+              </ul>
+              <!--header__menu-list--->
+            </nav>
+            <!--header__menu--->
+          </div>
+          <!--header__inner--->
+        </div>
+        <!--header-->
+
+        <!---------------ASIDE-------------------->
+        <aside class="aside">
+          <!--container css-->
+          <div class="aside__header">
+            <nav class="aside__nav">
+              <ul class="aside__list">
+                <li class="aside__item">
+                  <div class="icon-close">
+                    <a href="#"
+                      ><img src="img/icon-x.svg" alt="close item x"
+                    /></a>
+                  </div>
+                  <a href="/#"
+                    ><img src="img/back.svg" alt="close item empty sercle"
+                  /></a>
+                </li>
+                <li class="aside__item aside__item--logo">
+                  <a href="/#"><img src="img/Group.svg" alt="logo" /></a>
+                </li>
+                <li class="aside__item aside__item--search">
+                  <a href="/#"
+                    ><img src="img/search.svg" alt="search item"
+                  /></a>
+                </li>
+              </ul>
+            </nav>
+            <!--header-nav-->
+          </div>
+
+          <nav class="aside__menu">
+            <div class="aside__highlight"></div>
+            <ul class="menu__list">
+              <li class="menu__item">Ремонт техники</li>
+              <li class="menu__item">Услуги и сервисы</li>
+              <li class="menu__item">Корпоративные клиентам</li>
+              <li class="menu__item">Продовцам техники</li>
+              <li class="menu__item">Партнерам</li>
+              <li class="menu__item">Производителям</li>
+              <li class="menu__item">Наши сервисные центры</li>
+              <li class="menu__item">Контакты</li>
+            </ul>
+            <!---main__list-->
+          </nav>
+          <!--nav-main_menu-->
+
+          <div class="aside__contacts">
+            <a class="aside__contact aside__contact--phone" href="#"
+              ><img src="img/call.svg" alt="phone"
+            /></a>
+            <a class="aside__contact aside__contact--messege" href="#"
+              ><img src="img/chat.svg" alt="message"
+            /></a>
+            <a class="aside__contact aside__contact--phone" href="#"
+              ><img src="img/profile.svg" alt="profile"
+            /></a>
+          </div>
+          <!--footer__contacts-->
+
+          <address class="contact__info">
+            <a href="mailto:mail@cps.com" class="contact__email"
+              >mail@cps.com</a
+            >
+            <a href="tel:+88008908900" class="contact__phone">8 800 890 8900</a>
+          </address>
+
+          <div class="lang-switcher">
+            <button class="lang-switcher__btn lang-switcher__btn--active">
+              RU
+            </button>
+            <button class="lang-switcher__btn">EN</button>
+            <button class="lang-switcher__btn">CH</button>
+          </div>
+        </aside>
+
+        <!---------------MAIN-------------------->
+        <main>
+          <section class="services">
+            <div class="services__container">
+              <div class="highlight"></div>
+              <h2 class="services__title">Услуги и сервисы</h2>
+              <nav class="services__nav">
+                <ul class="services__list">
+                  <li class="services__item">Ремонтируемые устройства</li>
+                  <li class="services__item">Дополнительные услуги</li>
+                  <li class="services__item">Цены на услуги</li>
+                  <li class="services__item">Адреса сервесных центров</li>
+                  <li class="services__item">Спецальные цены</li>
+                  <li class="services__item">Отзывы</li>
+                </ul>
+                <!---services__list-->
+              </nav>
+              <!--services__nav-->
+            </div>
+            <!----services__container-->
+          </section>
+          <!---services-->
+          <!---------------ABOUT-------------------->
+          <div class="about">
+            <div class="about__text">
+              <p class="about__paragraph-one">
+                Мы являемся авторизованным сервисным центром по ремонту техники
+                Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с
+                официальной гарантией производителя.
+              </p>
+              <p class="about__paragraph-two">
+                Мы успешно работаем с 1992 года и заслужили репутацию надежного
+                партнера,
+                <br />
+                что подтверждает большое количество постоянных клиентов. Мы
+                гордимся тем, что к нам обращаются по рекомендациям и, в свою
+                очередь, советуют нас родным и близким.
+              </p>
+
+              <div class="about__read-more">
+                <img src="img/readMore.svg" alt="sign read more" />
+                <span>Читать далее</span>
+              </div>
+              <!--reade__more-icon-->
+            </div>
+            <!---about__text-->
+
+            <div class="about__media">
+              <img
+                class="about__img"
+                src="img/Picture Copy.png"
+                alt="main-img"
+              />
+            </div>
+            <!---about__media-->
+          </div>
+          <!---about-->
+
+          <!---------------SWIPER-CONTENT-1-------------------->
+          <div class="swiper__content">
+            <div class="swiper__text">
+              <h3>Ремонт техники различных брендов</h3>
+            </div>
+
+            <div class="swiper mobile-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="img/brands/lenovo.png" alt="lenovo-logo" />
+                  <a href="#"><img src="img/brands/go.svg" alt="lenovo" /></a>
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="img/brands/samsung.png" alt="samsung" />
+                  <a href="#"><img src="img/brands/go.svg" alt="samsung" /></a>
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/brands/apple.png" alt="apple" />
+                  <a href="#"><img src="img/brands/go.svg" alt="apple" /></a>
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="img//brands/bosch.png" alt="bosch" />
+                  <a href="#"><img src="img/brands/go.svg" alt="bosch" /></a>
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/brands/hp.png" alt="hp" />
+                  <a href="#"><img src="img/brands/go.svg" alt="hp" /></a>
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/brands/acer.png" alt="acer" />
+                  <a href="#"><img src="img/brands/go.svg" alt="acer" /></a>
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/brands/sonic.png" alt="view-sonic" />
+                  <a href="#"><img src="img/brands/go.svg" alt="sonic" /></a>
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/brands/sony.png" alt="sony" />
+                  <a href="#"><img src="img/brands/go.svg" alt="sony" /></a>
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/brands/lenovo.png" alt="lenovo-logo" />
+                  <a href="#"><img src="img/brands/go.svg" alt="lenovo" /></a>
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/brands/samsung.png" alt="samsung" />
+                  <a href="#"><img src="img/brands/go.svg" alt="samsung" /></a>
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/brands/apple.png" alt="apple" />
+                  <a href="#"><img src="img/brands/go.svg" alt="apple" /></a>
+                </div>
+              </div>
+              <!--swiper-wrapper -->
+              <div class="swiper-pagination"></div>
+            </div>
+            <!---swiper mobile-swiper--->
+
+            <!---tablet-desktop--->
+
+            <div class="grid desktop-grid">
+              <div class="content-card">
+                <img src="img/brands/lenovo.png" alt="lenovo-logo" />
+                <a href="#"><img src="img/brands/go.svg" alt="lenovo" /></a>
+              </div>
+
+              <div class="content-card">
+                <img src="img/brands/samsung.png" alt="samsung" />
+                <a href="#"><img src="img/brands/go.svg" alt="samsung" /></a>
+              </div>
+
+              <div class="content-card">
+                <img src="img/brands/apple.png" alt="apple" />
+                <a href="#"><img src="img/brands/go.svg" alt="apple" /></a>
+              </div>
+
+              <div class="content-card">
+                <img src="img/brands/bosch.png" alt="bosch" />
+                <a href="#"><img src="img/brands/go.svg" alt="bosch" /></a>
+              </div>
+
+              <div class="content-card">
+                <img src="img/brands/hp.png" alt="hp" />
+                <a href="#"><img src="img/brands/go.svg" alt="hp" /></a>
+              </div>
+
+              <div class="content-card">
+                <img src="img/brands/acer.png" alt="acer" />
+                <a href="#"><img src="img/brands/go.svg" alt="acer" /></a>
+              </div>
+
+              <div class="content-card hide-tablet">
+                <img src="img/brands/sonic.png" alt="view-sonic" />
+                <a href="#"><img src="img/brands/go.svg" alt="sonic" /></a>
+              </div>
+
+              <div class="content-card hide-tablet">
+                <img src="img/brands/sony.png" alt="sony" />
+                <a href="#"><img src="img/brands/go.svg" alt="sony" /></a>
+              </div>
+
+              <div class="content-card hide-tablet hide-desktop">
+                <img src="img/brands/lenovo.png" alt="lenovo-logo" />
+                <a href="#"><img src="img/brands/go.svg" alt="lenovo" /></a>
+              </div>
+
+              <div class="content-card hide-tablet hide-desktop">
+                <img src="img/brands/samsung.png" alt="samsung" />
+                <a href="#"><img src="img/brands/go.svg" alt="samsung" /></a>
+              </div>
+
+              <div class="content-card hide-tablet hide-desktop">
+                <img src="img/brands/apple.png" alt="apple" />
+                <a href="#"><img src="img/brands/go.svg" alt="apple" /></a>
+              </div>
+            </div>
+            <!--grid desktop-grid-->
+
+            <div class="see-more-btn">
+              <img src="img/brands/seemore.svg" alt="see more logo" />
+              <button id="toggleBtn"><span>Показать все</span></button>
+            </div>
+          </div>
+        </main>
+      </div>
+      <!---container-->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="js/index.js" defer></script>
   </body>
 </html>

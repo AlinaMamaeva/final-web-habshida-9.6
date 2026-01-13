@@ -1,17 +1,840 @@
-$bgColor: #24292e;
-$text: #fff;
+@use 'colors' as *;
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'fonts' as *;
 
-@font-face {
-  font-family: 'Comic';
-  src: url('../fonts/comic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+body {
+  font-family: 'TTLakesNeueTrialMedium';
+  color: $text;
+  line-height: 20px;
 }
 
-body {
-  padding: 1rem;
-  margin: 0;
-  font-family: Comic, sans-serif;
-  background-color: $bgColor;
+.container {
+  @include flex-wrap;
+  width: 100%;
+  max-width: 100%;
+  background: $bgColor;
+  padding-right: 25px;
+  margin-left: 0;
+}
+/* ================= HEADER================= */
+.header__inner,
+.main__menu,
+.about__text {
+  max-width: 100%;
+  width: 100vw;
+}
+
+.header__inner {
+  position: relative;
+  @include left-right-0;
+  width: 100vw;
+  // width: 100%;
+
+  background: $bgMenuColor;
+  height: $header-height;
+  padding: $header-padding;
+  @include display-flex;
+}
+
+/* ================= hamburger-button ================= */
+
+.header__left-icons {
+  position: relative;
+
+  .header__hamburger {
+    border: none;
+    background: transparent;
+    padding-bottom: 5px;
+  }
+
+  .header__hamburger-box {
+    padding-bottom: 5px;
+  }
+
+  .header__hamburger-button {
+    position: absolute;
+    left: 10px;
+    top: 20px;
+  }
+}
+
+.header__logo {
+  width: 96px;
+  height: $logo-height;
+  margin-left: 5px;
+  margin-bottom: -20px;
+}
+
+.divider {
+  &--burger,
+  &--setting {
+    display: none;
+  }
+  &--logo {
+    position: relative;
+    top: -5px;
+    left: 15px;
+    height: 32px;
+    color: rgba(234, 234, 234, 1);
+    border-radius: 1px;
+    opacity: 1;
+  }
+}
+
+.header__menu {
+  margin-right: 10px;
+  @include display-flex;
+  gap: 16px;
+
+  .header__icons {
+    display: none;
+  }
+}
+
+.header__list {
+  display: flex;
+  gap: 10px;
+
+  span {
+    display: none;
+  }
+}
+
+/* ================= SIDEBAR ================= */
+/*main {
+  flex: 1;
+}*/
+.aside {
+  position: fixed;
+  @include left-right-0;
+
+  width: clamp(280px, 85vw, 360px);
+  height: 100vh;
+  padding: 20px 16px;
+  background: $bgMenuColor;
+  letter-spacing: -0.2px;
+  font-weight: 500;
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.2),
+    -2px 0px 4px 0px rgba(69, 79, 126, 0.02);
+  z-index: 1000;
+
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+
+  &.open {
+    transform: translateX(0);
+  }
+}
+.aside__list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+
+  li:first-child {
+    position: relative;
+    flex-shrink: 0;
+  }
+  .icon-close {
+    position: absolute;
+    top: 12px;
+    left: 11px;
+  }
+}
+
+.aside__item--search {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.aside__item--logo {
+  flex-shrink: 0;
+}
+
+.aside__highlight {
+  width: 4px;
+  height: 32px;
+  background-color: $highlight;
+  position: relative;
+  right: 24.5px;
+  top: 50px;
+  border-radius: 0 10px 10px 0;
+}
+
+.aside__menu {
+  width: 100%;
+  color: $asideTextColor;
+
+  .menu__list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-top: 26px;
+
+    li {
+      color: $asideTextColor;
+      cursor: pointer;
+      transition: color 0.2s;
+      &:first-child {
+        color: $text;
+      }
+
+      &:hover {
+        color: $text;
+      }
+    }
+  }
+}
+
+.aside__contacts {
+  padding-top: 20px;
+  margin-top: auto;
+  display: flex;
+  gap: 16px;
+}
+
+.contact__info a {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  color: $asideTextColor;
+  font-style: normal;
+  text-decoration: none;
+
+  .contact__phone {
+    font-family: 'TTLakesNeueTrialExtraBold';
+    font-size: 24px;
+  }
+}
+
+.lang-switcher {
+  margin-top: 40px;
+  width: 87px;
+
+  &__btn {
+    border: none;
+    cursor: pointer;
+    background-color: #fff;
+    display: inline-block;
+    margin-left: 5px;
+    font-weight: 500;
+    &:hover {
+      color: $text;
+    }
+  }
+
+  .lang-switcher__btn--active {
+    color: $text;
+  }
+}
+
+/* ================= MAIN ================= */
+
+.services__container {
+  position: relative;
+  @include left-right-0;
+  width: 100vw;
+  padding: 0 16px;
+}
+
+.highlight {
+  width: 4px;
+  height: 35px;
+  background-color: $highlight;
+  /*position: absolute;*/
+  position: fixed;
+  left: 0px;
+  top: 102px;
+  border-radius: 0 10px 10px 0;
+}
+
+.services__title {
+  font-size: 28px;
+  letter-spacing: -0.6px;
+  font-family: 'TTLakesNeueTrialBold';
+  color: #1b1c21;
+  padding-top: $serviced-padding-top;
+}
+
+.services__list {
+  padding-top: $serviced-padding-top;
+  display: flex;
+  text-align: left;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  gap: 40px;
+}
+.services__item {
+  flex-shrink: 0;
+  height: 40px;
   color: $text;
+  @include service-item-flex;
+}
+
+.services__list li:first-child {
+  width: 245px;
+  border: 2px solid $swiperBoxColor;
+  background-color: $bgMenuColor;
+  border-radius: 6px;
+}
+/* ================= ABOUT ================= */
+.about {
+  @include about-flex-column;
+  gap: 5px;
+  padding-top: 24px;
+  /*}*/
+
+  &__text {
+    /*width: 100%;*/
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.2px;
+    padding-left: 16px;
+    padding-right: 16px;
+    /*}*/
+    span {
+      display: none;
+    }
+    &__paragraph-one {
+      display: block;
+      width: 100%;
+      word-wrap: break-word;
+      word-break: break-all;
+    }
+  }
+  &__paragraph-two {
+    display: none;
+  }
+}
+
+.about__read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: -0.2px;
+  color: #1b1c21;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.about__media {
+  width: 100%;
+  height: auto;
+  max-width: 360px;
+  flex-shrink: 0;
+  padding-right: 30px;
+}
+.about__img {
+  width: 100%;
+  display: block;
+  height: auto;
+  border-radius: 10px;
+}
+
+.about__read-more {
+  img {
+    margin-right: 10px;
+  }
+  span {
+    display: contents;
+  }
+}
+/* ================= SWIPER-CONTENT-1================= */
+.swiper__content {
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 1),
+    rgba(248, 248, 248, 1)
+  );
+  width: 100%;
+  height: auto;
+  border-top: 1px solid rgba(217, 255, 245, 1);
+}
+h3 {
+  min-width: 280px;
+  padding: 1em 1em;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: $text;
+  font-family: 'TTLakesNeueTrialExtraLight';
+  letter-spacing: -0.2px;
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.mobile-swiper {
+  padding-bottom: 30px;
+  padding-top: 16px;
+}
+.mobile-swiper .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  gap: 16px;
+  width: 240px;
+  height: 72px;
+  background: #fff;
+  border-radius: 5px;
+  border: 1px solid #eaeaea;
+}
+.mobile-swiper .swiper-slide:first-child {
+  margin-left: 16px;
+}
+.content-card,
+.hide-tablet,
+.hide-desktop {
+  display: none;
+}
+
+.swiper-pagination {
+  margin-bottom: -5px;
+}
+.see-more-btn {
+  display: none;
+}
+
+/* ================= TABLET ================= */
+@media (min-width: 770px) {
+  .container {
+    min-width: 100%;
+    position: relative;
+    @include left-right-0;
+    width: 100vw;
+  }
+
+  .header__menu {
+    .header__menu-icons {
+      @include display-flex;
+      gap: 16px;
+    }
+  }
+
+  .header__menu-icon {
+    display: block;
+  }
+  .header__left-icons {
+    display: flex;
+    gap: 15px;
+
+    .header__hamburger-button {
+      position: absolute;
+      left: 10px;
+      top: 15px;
+    }
+  }
+
+  .aside {
+    width: 320px;
+
+    box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.2),
+      -2px 0px 4px 0px rgba(69, 79, 126, 0.02);
+  }
+
+  .divider {
+    &--logo {
+      display: none;
+    }
+    &--burger {
+      display: inline-flex;
+      position: relative;
+      top: 10px;
+      left: 5px;
+      height: 32px;
+      color: #eaeaea;
+      border-radius: 1px;
+      opacity: 1;
+    }
+    &--setting {
+      display: block;
+      position: relative;
+      margin-right: 20px;
+    }
+  }
+  .services__list {
+    gap: 30px;
+  }
+
+  .about {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 10px 0;
+
+    &__text {
+      flex: 1;
+      width: 100%;
+
+      span {
+        display: none;
+      }
+    }
+    &__paragraph-two {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+  }
+
+  .about__read-more {
+    img {
+      margin-right: 10px;
+    }
+    span {
+      display: contents;
+    }
+  }
+
+  .about__media {
+    max-width: 360px;
+
+    .about__img {
+      width: auto;
+      height: auto;
+    }
+  }
+  //------swiper-1------
+  h3 {
+    width: 100%;
+    padding: 16px 16px;
+  }
+  .mobile-swiper {
+    display: none;
+  }
+
+  .hide-tablet {
+    display: none;
+  }
+
+  .content-card,
+  .hide-desktop {
+    width: 100%;
+    width: 240px;
+    height: 72px;
+    margin: 0 auto;
+
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid #eaeaea;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+  }
+  .hide-tablet {
+    display: none;
+  }
+
+  .swiper__content {
+    height: auto;
+  }
+
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 16px;
+  }
+
+  .see-more-btn {
+    padding-left: 35px;
+    display: flex;
+    align-content: center;
+    gap: 10px;
+  }
+  button {
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  #toggleBtn span {
+    font-family: 'TTLakesNeueTrialMedium';
+    color: rgba(27, 28, 33, 1);
+    font-weight: 500;
+  }
+  .see-more-btn img {
+    transition: transform 0.3s ease;
+  }
+  .see-more-btn img.rotated {
+    transform: rotate(180deg);
+  }
+  .force-show {
+    display: flex;
+  }
+}
+
+/* ================= DESK ================= */
+@media (min-width: 1024px) {
+  .page {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .about__text,
+  .header__inner,
+  .main__menu {
+    width: auto;
+  }
+
+  .header__icons,
+  .header__left-icons,
+  .header__menu-icon {
+    display: none;
+  }
+
+  .header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 0 24px;
+  }
+  .header__inner {
+    background-color: $bgColor;
+    margin-left: auto;
+    padding-right: 230px;
+    padding-top: 42px;
+    width: auto;
+    display: flex;
+    justify-content: flex-end;
+    gap: 6px;
+  }
+
+  .services__title {
+    padding-top: 20px;
+  }
+
+  .header__list {
+    span {
+      display: inline-block;
+      margin-top: 10px;
+      color: #1b1c21;
+    }
+    .divider--setting {
+      display: none;
+    }
+  }
+  /*body,
+  html {
+    height: 100%;
+    margin: 0;
+  }*/
+
+  .aside {
+    position: fixed;
+    @include left-right-0;
+    max-width: 280px;
+    height: 100vh;
+    overflow: hidden;
+    box-shadow: none;
+    transform: none;
+
+    .aside__header {
+      width: 280px;
+    }
+    .aside__item--search {
+      margin-right: 20px;
+    }
+  }
+
+  .container {
+    padding-left: 32px;
+    position: fixed;
+    flex: 1;
+    overflow: hidden;
+    margin-left: 280px;
+  }
+  /*main {
+    max-width: 1000px;
+  }*/
+  .services {
+    &__container {
+      position: relative;
+      top: -50px;
+      /* padding-right: 16px;*/
+    }
+
+    .highlight {
+      width: 4px;
+      height: 35px;
+      background-color: $highlight;
+      position: absolute;
+      left: 0px;
+      top: 40px;
+      position: fixed;
+      border-radius: 0 10px 10px 0;
+    }
+    &__title {
+      position: relative;
+      top: -10px;
+    }
+    &__list {
+      width: 100%;
+      max-width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-bottom: 20px;
+    }
+
+    &__item {
+      word-break: break-word;
+      overflow-wrap: break-word;
+      padding: 5px 12px;
+    }
+  }
+
+  .about {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    padding: 10px 0;
+    padding-right: 100px;
+    margin-top: -60px;
+
+    &__text {
+      width: 100%;
+      min-width: 40%;
+    }
+
+    span {
+      display: block;
+      font-size: 16px;
+      /* position: relative;
+      left: 20px;*/
+      color: $text;
+      margin-left: 20px;
+    }
+
+    p {
+      display: inline-grid;
+      min-width: 0;
+      word-wrap: break-word;
+      word-break: break-word;
+    }
+    &__paragraph-one {
+      margin-top: -30px;
+    }
+
+    &__paragraph-two {
+      margin-top: 20px;
+    }
+
+    &__read-more span {
+      color: #1b1c21;
+    }
+
+    .about__media {
+      width: 100%;
+      height: auto;
+      max-width: 500px;
+      min-width: 0;
+      /* display: block;*/
+
+      .about__img {
+        width: 100%;
+        display: block;
+        height: auto;
+      }
+    }
+  }
+  //-------swiper-1-------
+  h3 {
+    padding: 15px 0;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 16px;
+    justify-content: start;
+  }
+
+  .content-card,
+  .hide-tablet {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    width: 100%;
+    width: 240px;
+    height: 72px;
+    margin: 0 auto;
+
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid #eaeaea;
+  }
+  .hide-desktop {
+    display: none;
+  }
+
+  .swiper-slide,
+  .mobile-swiper {
+    display: none;
+  }
+
+  .see-more-btn {
+    padding-left: 35px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: padding-top 0.3s ease;
+  }
+
+  .see-more-btn.open {
+    padding-top: 22px;
+  }
+  .see-more-btn img {
+    transition: transform 0.3s ease;
+  }
+  .see-more-btn img.rotated {
+    transform: rotate(180deg);
+  }
+
+  button {
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  #toggleBtn span {
+    font-family: 'TTLakesNeueTrialMedium';
+    color: rgba(27, 28, 33, 1);
+    font-weight: 500;
+  }
+  .see-more-btn img {
+    transition: transform 0.3s ease;
+  }
+  .see-more-btn img.rotated {
+    transform: rotate(180deg);
+  }
+  .force-show {
+    display: block;
+  }
 }
