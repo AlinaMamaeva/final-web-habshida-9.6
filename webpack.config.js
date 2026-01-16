@@ -33,8 +33,19 @@ module.exports = {
         }
       },
 
+
+
+
+
+
+
+
+
+
+
+
       // Compile SCSS to CSS
-      {
+    {
         test: /\.scss$/,
         use: [
           MiniCssExtractPlugin.loader, // Extract css to separate file

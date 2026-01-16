@@ -38,11 +38,11 @@
     "html-webpack-plugin": "^5.5.3",
     "mini-css-extract-plugin": "^2.7.6",
     "postcss-loader": "^7.3.3",
-    "sass": "^1.78.0",
-    "sass-loader": "^13.3.1",
+    "sass": "^1.97.2",
+    "sass-loader": "^16.0.6",
     "webpack": "^5.88.1",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.15.1"
+    "webpack-dev-server": "^5.2.3"
   },
   "engineStrict": true,
   "engines": {
@@ -53,5 +53,10 @@
     "plugins": {
       "autoprefixer": {}
     }
+  },
+  "dependencies": {
+    "glob": "^13.0.0",
+    "rimraf": "^6.1.2",
+    "swiper": "^12.0.3"
   }
 }
