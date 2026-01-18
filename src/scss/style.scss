@@ -25,6 +25,7 @@ body {
   padding-right: 16px;
 
   margin-left: 0;
+  font-family: 'TTLakesNeueTrialMedium';
 }
 /* ================= HEADER================= */
 .header__inner,
@@ -129,7 +130,9 @@ body {
   display: flex;
   flex-direction: column;
 
-  box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.2), -2px 0px 4px 0px rgba(69, 79, 126, 0.02);
+  box-shadow:
+    16px 0px 52px 0px rgba(14, 24, 80, 0.2),
+    -2px 0px 4px 0px rgba(69, 79, 126, 0.02);
   z-index: 1000;
 
   transform: translateX(-100%);
@@ -218,7 +221,7 @@ body {
   text-decoration: none;
 
   .contact__phone {
-    font-family: 'TTLakesNeueTrialExtraBold';
+    font-family: 'TTLakesNeueTrialBold';
     font-size: 24px;
   }
 }
@@ -348,6 +351,7 @@ body {
 }
 
 .about__read-more {
+  font-size: 16px;
   img {
     margin-right: 10px;
   }
@@ -437,7 +441,7 @@ h3 {
 .tech-content {
   padding-top: 24px;
   padding-left: 16px;
-  padding-bottom: 20px;
+  /* padding-bottom: 20px;8*/
 }
 
 .swiper-tech .swiper-slide {
@@ -488,7 +492,7 @@ h3 {
   width: 260px;
   height: 200px;
   border: 1px solid $bgMenuColor;
-  border-radius: 6px;
+
   background: $bgMenuColor;
 }
 
@@ -533,6 +537,38 @@ h3 {
 .price-table {
   display: none;
 }
+.price-content-desk {
+  display: none;
+}
+.price__notice {
+  width: 290px;
+  padding-left: 16px;
+}
+
+.price__notice-link {
+  color: rgba(27, 28, 33, 1);
+  font-weight: 500;
+
+  padding-top: 20px;
+}
+.price__notice-action img {
+  position: relative;
+  top: -23px;
+  left: 102px;
+}
+.footer {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  text-align: center;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  color: rgba(126, 126, 130, 1);
+  border-top: 1px solid rgba(217, 255, 245, 1);
+}
+
 /* ================= TABLET ================= */
 @media (min-width: 768px) {
   .container {
@@ -560,15 +596,22 @@ h3 {
 
     .header__hamburger-button {
       position: absolute;
-      left: 10px;
-      top: 15px;
+      left: 17px;
+      top: 17px;
+    }
+    .header__hamburger-box {
+      position: relative;
+      top: 5px;
+      left: 8px;
     }
   }
 
   .aside {
     width: 320px;
 
-    box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.2), -2px 0px 4px 0px rgba(69, 79, 126, 0.02);
+    box-shadow:
+      16px 0px 52px 0px rgba(14, 24, 80, 0.2),
+      -2px 0px 4px 0px rgba(69, 79, 126, 0.02);
   }
 
   .divider {
@@ -591,8 +634,12 @@ h3 {
       margin-right: 20px;
     }
   }
-  .services__list {
-    gap: 30px;
+  .services__container {
+    padding-left: 24px;
+
+    &__list {
+      gap: 30px;
+    }
   }
 
   .about {
@@ -606,6 +653,7 @@ h3 {
     &__text {
       flex: 1;
       width: 100%;
+      padding-left: 24px;
 
       span {
         display: none;
@@ -626,6 +674,7 @@ h3 {
     }
     span {
       display: contents;
+      font-size: 16px;
     }
   }
 
@@ -641,24 +690,20 @@ h3 {
   //------swiper-1------
   h3 {
     width: 100%;
-    padding: 16px 14px;
+    padding: 16px 24px;
   }
-  .mobile-swiper {
-    display: none;
-  }
-
-  .hide-tablet {
-    display: none;
-  }
+  .mobile-swiper,
+  .hide-tablet,
   .desktop-grid {
     display: none;
   }
+
   .tablet-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: start;
     gap: 24px;
-    padding-left: 14px;
+    padding: 24px;
   }
   .content-card,
   .hide-desktop {
@@ -685,7 +730,7 @@ h3 {
   }
 
   .see-more-btn {
-    padding-left: 35px;
+    padding-left: 23px;
     display: flex;
     align-content: center;
     gap: 10px;
@@ -700,9 +745,10 @@ h3 {
     font-family: 'TTLakesNeueTrialMedium';
     color: rgba(27, 28, 33, 1);
     font-weight: 500;
+    font-size: 16px;
   }
   .see-more-btn {
-    padding-top: 24px;
+    padding-bottom: 32px;
   }
   .see-more-btn img {
     transition: transform 0.3s ease;
@@ -717,18 +763,25 @@ h3 {
   .swiper-tech {
     display: none;
   }
+  .tech-content {
+    padding: 0;
+  }
+  h3 {
+    width: 100%;
+    padding: 32px 24px;
+  }
   .tech-grid {
     display: grid;
     /* grid-template-columns: repeat(4, auto);*/
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     justify-content: start;
-    padding-left: 14px;
-    padding-right: 14px;
+    padding-left: 30px;
+    padding-right: 24px;
   }
 
   .tech-card {
-    min-width: 224px;
+    width: 214px;
     position: relative;
     height: 160px;
     padding: 12px;
@@ -747,36 +800,130 @@ h3 {
     display: none;
   }
 
-  .force-show {
-    display: block;
-  }
   .see-more-btn-tech {
+    padding-left: 24px;
     padding-top: 24px;
+    padding-bottom: 8px;
+
+    display: flex;
+    align-content: center;
+    gap: 10px;
   }
+  button {
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  #toggleBtnTech span {
+    font-family: 'TTLakesNeueTrialMedium';
+    color: rgba(27, 28, 33, 1);
+    font-weight: 500;
+    font-size: 16px;
+  }
+
   .see-more-btn-tech img {
     transition: transform 0.3s ease;
   }
-
   .see-more-btn-tech img.rotated {
     transform: rotate(180deg);
   }
-    //-------------swiper3-------
+  .force-show {
+    display: flex;
+  }
+  //-------------swiper3-------
 
-  .price-content{
+  .price-content {
     display: none;
   }
+  .price-content-desk {
+    display: block;
+  }
+  h3 {
+    width: 100%;
+    padding: 16px 24px;
+  }
 
+  .table-price-wrapper {
+    overflow-x: auto;
+    width: 100%;
+    max-width: 100%;
+    padding: 35px;
+  }
 
-.price-table {
-  display: flex;
-  align-content: center;
-  width: 720px;
-  height: 355px;
-  
-}
+  .price-table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    padding-left: 24px;
+  }
+  .price-title th {
+    text-align: left;
+    padding: 16px 24px;
+    vertical-align: middle;
+  }
 
+  .price-table tr {
+    border-bottom: 1px solid rgba(234, 234, 234, 1);
+  }
+  .price-table tr:first-child,
+  .price-table tr:last-child {
+    border-bottom: none;
+  }
+  .price-table td {
+    padding: 16px 23px;
+  }
 
+  .price-info {
+    background: $bgMenuColor;
+    border-radius: 6px;
+    padding: 24px;
+  }
 
+  .btn__price {
+    right: 16px;
+    bottom: 16px;
+    width: 120px;
+    height: 32px;
+    border: none;
+    border-radius: 16px;
+    background-color: rgba(255, 62, 121, 1);
+  }
+
+  .btn__price span {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .btn__price img {
+    margin-left: 8px;
+  }
+
+  .price__notice {
+    min-width: 70%;
+    padding-left: 24px;
+  }
+
+  .price__notice-action img {
+    position: relative;
+    top: -23px;
+    left: 300px;
+  }
+  .footer {
+    display: flex;
+    align-content: center;
+    text-align: center;
+    flex-direction: row;
+    gap: 23px;
+    padding-left: 23px;
+    padding-bottom: 20px;
+    padding-top: 40px;
+  }
+  .footer__credits,
+  .footer__privacy-policy {
+    text-wrap: nowrap;
+  }
 }
 
 /* ================= DESK ================= */
@@ -803,13 +950,13 @@ h3 {
     display: flex;
     width: 100%;
     align-items: center;
-    padding: 0 24px;
+    padding: 0 22px;
   }
   .header__inner {
     background-color: $bgColor;
     margin-left: auto;
-    padding-right: 230px;
-    padding-top: 42px;
+
+    padding-top: 52px;
     width: auto;
     display: flex;
     justify-content: flex-end;
@@ -821,20 +968,17 @@ h3 {
   }
 
   .header__list {
+    position: relative;
+    left: 60px;
     span {
       display: inline-block;
       margin-top: 10px;
-      color: #1b1c21;
+      color: #070707;
     }
     .divider--setting {
       display: none;
     }
   }
-  /*body,
-  html {
-    height: 100%;
-    margin: 0;
-  }*/
 
   .aside {
     position: fixed;
@@ -844,38 +988,35 @@ h3 {
     overflow: hidden;
     box-shadow: none;
     transform: none;
+    padding-top: 30px;
 
     .aside__header {
       width: 280px;
     }
     .aside__item--search {
-      margin-right: 20px;
+      margin-right: 30px;
+    }
+    .aside__item--close {
+      display: none;
     }
   }
 
   .container {
-    /*padding-left: 32px;
-    position: fixed;
-    flex: 1;
-    overflow-x: visible;
-    margin-left: 280px;*/
-    position: relative; /* ✅ */
+    position: relative;
     margin-left: 280px;
-    padding-left: 32px;
-
-    width: calc(100% - 280px); /* 🔥 КЛЮЧ */
+    padding: 32px;
+    padding-top: 0;
+    width: calc(100% - 280px);
     box-sizing: border-box;
 
     overflow: visible;
   }
-  /*main {
-    max-width: 1000px;
-  }*/
+
   .services {
     &__container {
       position: relative;
-      top: -50px;
-      /* padding-right: 16px;*/
+      top: -40px;
+      padding-left: 2px;
     }
 
     .highlight {
@@ -897,12 +1038,14 @@ h3 {
       max-width: 100%;
       display: flex;
       flex-wrap: wrap;
+
       gap: 10px;
       padding-bottom: 20px;
     }
 
     &__item {
       word-break: break-word;
+
       overflow-wrap: break-word;
       padding: 5px 12px;
     }
@@ -915,13 +1058,14 @@ h3 {
     gap: 20px;
 
     padding: 10px 0;
-    padding-right: 100px;
+    padding-right: 150px;
     margin-top: -60px;
 
     &__text {
       width: 100%;
       min-width: 0;
       flex-shrink: 1;
+      padding-left: 2px;
     }
 
     span {
@@ -946,9 +1090,13 @@ h3 {
     &__paragraph-two {
       margin-top: 20px;
     }
-
+    &__read-more {
+      margin-right: 5px;
+    }
     &__read-more span {
       color: #1b1c21;
+      position: relative;
+      right: 25px;
     }
   }
   .about__media {
@@ -956,7 +1104,6 @@ h3 {
     height: auto;
     max-width: 500px;
     min-width: 0;
-    /* display: block;*/
 
     .about__img {
       width: 100%;
@@ -967,23 +1114,25 @@ h3 {
 
   //-------swiper-1-------
   h3 {
-    padding: 15px 0;
+    padding: 30px 0;
   }
   .tablet-grid {
     display: none;
   }
   .desktop-grid {
     display: grid;
+    padding: 32px;
     grid-template-columns: repeat(4, 240px);
     justify-content: start;
     gap: 32px;
+    padding-left: 0;
   }
 
   .content-card,
   .hide-tablet {
     display: flex;
     align-content: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     padding: 0 16px;
 
     width: 100%;
@@ -1004,12 +1153,14 @@ h3 {
     display: none;
   }
 
-  .see-more-btn {
-    padding-left: 35px;
+  .see-more-btn-tech {
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: space-between;
+    gap: 5px;
     transition: padding-top 0.3s ease;
+
+    font-size: 16px;
   }
 
   .see-more-btn.open {
@@ -1028,11 +1179,7 @@ h3 {
     background: transparent;
     cursor: pointer;
   }
-  #toggleBtn span {
-    font-family: 'TTLakesNeueTrialMedium';
-    color: rgba(27, 28, 33, 1);
-    font-weight: 500;
-  }
+
   .see-more-btn img {
     transition: transform 0.3s ease;
   }
@@ -1045,15 +1192,16 @@ h3 {
 
   ///-----swiper2------------------------------------
 
-  h3 {
+  /* h3 {
     padding: 15px 0;
-  }
+  }*/
   .tech-grid {
     display: grid;
-    /* grid-template-columns: repeat(4, auto);*/
+
     grid-template-columns: repeat(4, 240px);
     gap: 32px;
     justify-content: start;
+    padding-left: 0;
   }
   .hide-tech {
     display: block;
@@ -1064,11 +1212,72 @@ h3 {
   .force-show {
     display: block;
   }
+  .see-more-btn-tech {
+    padding-top: 24px;
+    padding-bottom: 50px;
+  }
   .see-more-btn-tech img {
     transition: transform 0.3s ease;
   }
 
   .see-more-btn-tech img.rotated {
     transform: rotate(180deg);
+  }
+
+  //------swiper-3------
+
+  .price-table {
+    display: table;
+  }
+
+  .table-price-wrapper {
+    padding: 0;
+    padding-bottom: 10px;
+  }
+
+  .price-table {
+    width: 75%;
+    max-width: 100%;
+  }
+
+  .price__notice {
+    margin-top: 32px;
+    min-width: 50%;
+    padding-left: 0;
+    padding-bottom: 30px;
+  }
+
+  .price__notice-action img {
+    position: relative;
+    top: -23px;
+    left: 300px;
+  }
+
+  .see-more-btn-tech {
+    display: block;
+    padding-left: 0;
+  }
+  .see-more-btn-tech span {
+    margin-left: 10px;
+  }
+
+  //----FOOTER-------------------
+  .footer {
+    display: flex;
+    align-content: center;
+    text-align: center;
+    flex-direction: row;
+    gap: 32px;
+    padding-bottom: 20px;
+    padding-top: 40px;
+  }
+  .footer__credits,
+  .footer__privacy-policy {
+    text-wrap: nowrap;
+  }
+  .footer__disclaimer {
+    text-wrap: wrap;
+    min-width: 320px;
+    align-items: flex-end;
   }
 }

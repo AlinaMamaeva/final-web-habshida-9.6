@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
 window.addEventListener("resize", () => {
   initMobileSwiper();
   initTechSwiper();
-});
+});*/
 
 //------SWIPER-3-------------------------
 
@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     loop: false,               // Если нужно зацикливание, поставить true
   });
-}); */
+}); 
 
 
 /*let mobileSwiper = null;
@@ -247,8 +247,8 @@ document.addEventListener("DOMContentLoaded", () => {
 window.addEventListener("resize", () => {
   initMobileSwiper();
   initTechSwiper();
-});*/
-
+});
+*/
 
 
 
