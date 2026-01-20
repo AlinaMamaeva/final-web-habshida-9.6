@@ -1,9 +1,116 @@
 import '../scss/style.scss';
 
-
-
 console.log('It works!')
-//------BTN-OPEN-CLOSE-------------------------
+
+//------ABOUT-------------------------
+ 
+const readMoreBtn = document.querySelector(".about__read-more");
+
+if (readMoreBtn) {
+  const paragraphTwo = document.querySelector(".about__paragraph-two");
+  const paragraphThree = document.querySelector(".about__paragraph-three");
+  const span = readMoreBtn.querySelector("span");
+
+  let expanded = false;
+
+  const collapseText = () => {
+    paragraphThree.style.display = "none";
+
+    if (window.innerWidth >= 1118) {
+      // DESKTOP
+      paragraphTwo.style.display = "block";
+      paragraphTwo.style.maxHeight = "7em"; // ~2 строки
+      paragraphTwo.style.overflow = "hidden";
+      paragraphTwo.style.webkitLineClamp = "unset";
+    } 
+    else if (window.innerWidth >= 768) {
+      // TABLET
+      paragraphTwo.style.display = "-webkit-box";
+      paragraphTwo.style.webkitBoxOrient = "vertical";
+      paragraphTwo.style.webkitLineClamp = "2"; // ТОЛЬКО целое число
+      paragraphTwo.style.overflow = "hidden";
+    } 
+    else {
+      // MOBILE
+      paragraphTwo.style.display = "none";
+    }
+
+    span.textContent = "Читать далее";
+    expanded = false;
+  };
+
+  const expandText = () => {
+    paragraphTwo.style.display = "block";
+    paragraphTwo.style.maxHeight = "none";
+    paragraphTwo.style.webkitLineClamp = "unset";
+    paragraphTwo.style.overflow = "visible";
+
+    paragraphThree.style.display = "block";
+
+    span.textContent = "Скрыть";
+    expanded = true;
+  };
+
+  readMoreBtn.addEventListener("click", () => {
+    expanded ? collapseText() : expandText();
+  });
+
+  window.addEventListener("resize", () => {
+    if (!expanded) collapseText();
+  });
+
+  collapseText();
+}
+
+
+
+
+//------SWIPER-1-------------------------
+
+
+const swiper = new Swiper(".mobile-swiper", {
+  slidesPerView: "auto",
+  spaceBetween: 16,
+  loop: true,
+  pagination: {
+    el: ".mobile-swiper .mobile-pagination",
+    clickable: true,
+  },
+});
+
+ //------SWIPER-2-------------------------
+
+const swiper2 = new Swiper(".swiper-tech", {
+  slidesPerView: "auto",
+  spaceBetween: 16,
+  loop: true,   
+  loopAdditionalSlides: 1,        
+  grabCursor: true,
+  pagination: {
+    el: ".swiper-tech .tech-pagination",
+    clickable: true,
+  }
+ 
+});
+
+//------SWIPER-3-------------------------
+
+const swiper3 = new Swiper(".swiper-price", {
+  slidesPerView: "auto",
+  spaceBetween: 16,
+  loop: true,    
+   loopAdditionalSlides: 1,        
+ 
+ 
+  pagination: {
+    el: ".swiper-price .price-pagination",
+    clickable: true,
+  },
+ 
+ 
+});
+
+//------BTN-OPEN-CLOSE-1------------------------
 const aside = document.querySelector('.aside');
 const hamburgerBtn = document.querySelector('.header__hamburger');
 const closeBtn = document.querySelector('.aside .icon-close a');
@@ -13,65 +120,17 @@ hamburgerBtn.addEventListener('click', () => {
 });
 
 closeBtn.addEventListener('click', (e) => {
-  e.preventDefault(); // чтобы ссылка не срабатывала
+  e.preventDefault(); 
   aside.classList.remove('open');
 });
 
-//------SWIPER-1-------------------------
-
-
-
- /*let swiper = null;
-
-function initSwiper() {
-  const isMobile = window.innerWidth <= 767;
-
-  if (isMobile && !swiper) {
-    // В CDN версии просто создаем экземпляр
-    swiper = new Swiper(".mobile-swiper", {
-      slidesPerView: "auto",
-      spaceBetween: 16,
-      // Включаем пагинацию
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
-    console.log("Swiper запущен через CDN");
-  } else if (!isMobile && swiper) {
-    swiper.destroy(true, true);
-    swiper = null;
-    console.log("Swiper удален на десктопе");
-  }
-}
-
-// Слушатели событий
-document.addEventListener("DOMContentLoaded", initSwiper);
-window.addEventListener("resize", initSwiper);
-*/
 
 
 
 
+//------BTN-OPEN-CLOSE-2------------------------
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Кнопка показать/скрыть 1
 document.addEventListener("DOMContentLoaded", () => {
  const wrapper = document.querySelector(".see-more-btn");
   const btn = document.getElementById("toggleBtn");
@@ -91,173 +150,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-//------SWIPER-2-------------------------
+
+//------BTN-OPEN-CLOSE-3------------------------
 
 
-
-/*let mobileSwiper = null;
-let techSwiper = null;
-
-function initMobileSwiper() {
-  const isMobile = window.innerWidth <= 767;
-
-  if (isMobile && !mobileSwiper) {
-    mobileSwiper = new Swiper(".mobile-swiper", {
-      slidesPerView: "auto",
-      spaceBetween: 16,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
-    console.log("Mobile Swiper запущен");
-  } else if (!isMobile && mobileSwiper) {
-    mobileSwiper.destroy(true, true);
-    mobileSwiper = null;
-    console.log("Mobile Swiper удален");
-  }
-}
-
-function initTechSwiper() {
-  const isMobile = window.innerWidth <= 767;
-
-  if (isMobile && !techSwiper) {
-    techSwiper = new Swiper(".swiper-tech", {
-      slidesPerView: "auto",
-      spaceBetween: 16,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
-    console.log("Tech Swiper запущен");
-  } else if (!isMobile && techSwiper) {
-    techSwiper.destroy(true, true);
-    techSwiper = null;
-    console.log("Tech Swiper удален");
-  }
-}
-
-// Слушатели событий
-document.addEventListener("DOMContentLoaded", () => {
-  initMobileSwiper();
-  initTechSwiper();
-});
-
-window.addEventListener("resize", () => {
-  initMobileSwiper();
-  initTechSwiper();
-});*/
-
-//------SWIPER-3-------------------------
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  const swiperPrice = new Swiper(".swiper-price", {
-    slidesPerView: 1,         // Показываем по одной карточке на мобильном
-    spaceBetween: 16,          // Расстояние между карточками
-    pagination: {
-      el: ".repair-pagination",
-      clickable: true,         // Чтобы можно было кликать на точки
-    },
-    scrollbar: {
-      el: ".repair-scrollbar",
-      draggable: true,         // Ползунок можно тянуть
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 2,      // На планшете 2 карточки
-        spaceBetween: 20,
-      },
-      1024: {
-        slidesPerView: 3,      // На десктопе 3 карточки
-        spaceBetween: 24,
-      }
-    },
-    loop: false,               // Если нужно зацикливание, поставить true
-  });
-}); 
-
-
-/*let mobileSwiper = null;
-let techSwiper = null;
-
-function initMobileSwiper() {
-  const isMobile = window.innerWidth <= 767;
-
-  if (isMobile && !mobileSwiper) {
-    mobileSwiper = new Swiper(".mobile-swiper", {
-      slidesPerView: "auto",
-      spaceBetween: 16,
-      pagination: {
-        el: ".mobile-pagination",
-        clickable: true,
-      },
-    });
-    console.log("Mobile Swiper запущен");
-  } else if (!isMobile && mobileSwiper) {
-    mobileSwiper.destroy(true, true);
-    mobileSwiper = null;
-    console.log("Mobile Swiper удален");
-  }
-}
-
-function initTechSwiper() {
-  const isDesktop = window.innerWidth > 767;
-
-  if (isDesktop && !techSwiper) {
-    techSwiper = new Swiper(".swiper-tech", {
-      slidesPerView: 4,
-      spaceBetween: 16,
-      pagination: {
-        el: ".tech-pagination",
-        clickable: true,
-      },
-    });
-    console.log("Tech Swiper запущен");
-  } else if (!isDesktop && techSwiper) {
-    techSwiper.destroy(true, true);
-    techSwiper = null;
-    console.log("Tech Swiper удален");
-  }
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  initMobileSwiper();
-  initTechSwiper();
-
-  const swiperPrice = new Swiper(".swiper-price", {
-    slidesPerView: 1,
-    spaceBetween: 16,
-    pagination: {
-      el: ".repair-pagination",
-      clickable: true,
-    },
-    scrollbar: {
-      el: ".repair-scrollbar",
-      draggable: true,
-    },
-    breakpoints: {
-      768: { slidesPerView: 2, spaceBetween: 20 },
-      1024: { slidesPerView: 3, spaceBetween: 24 },
-    },
-  });
-});
-
-window.addEventListener("resize", () => {
-  initMobileSwiper();
-  initTechSwiper();
-});
-*/
-
-
-
-
-
-
-
-
-// Кнопка показать/скрыть 2
 document.addEventListener("DOMContentLoaded", () => {
   const btn = document.getElementById("toggleBtnTech");
   if (!btn) return;

@@ -1,17 +1,30 @@
 @font-face {
-  font-family: 'TTLakesNeueTrialBold';
-  src: url('../fonts/TT Lakes Neue Trial Bold.ttf') format('truetype');
+  font-family: 'TTLakesBold';
+  src: url('../fonts/TTLakesBold.ttf') format('truetype');
   font-display: swap;
-  font-weight: normal;
-  font-style: italic;
+  font-weight: bold;
+
 }
 
 @font-face  {
-  font-family: 'TTLakesNeueTrialMedium';
-  src: url('../fonts/TT Lakes Neue Trial Medium.ttf') format('truetype');
+  font-family: 'TTLakesMedium';
+  src: url('../fonts/TTLakesMedium.ttf') format('truetype');
   font-display: swap;
   font-weight: normal;
-  font-style: italic;
-}
 
+}
+@font-face  {
+  font-family: 'TTLakesRegular';
+  src: url('../fonts/TTLakesRegular.ttf') format('truetype');
+  font-display: swap;
+  font-weight: 300;
+
+}
+@font-face  {
+  font-family: 'TTLakesExtraBold';
+  src: url('../fonts/TTLakesExtraBold.ttf') format('truetype');
+  font-display: swap;
+  font-weight: 900;
+
+}
 

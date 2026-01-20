@@ -8,8 +8,6 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
-    <!-- <img src="./img/webpack.svg" alt="Webpack Logo" width="200px" />
-    <h3>Welcome to Webpack 5 starter 777 </h3>-->
     <div class="page">
       <div class="container">
         <!---------------HEADER-------------------->
@@ -143,11 +141,8 @@
           <div class="about">
             <div class="about__text">
               <p class="about__paragraph-one">Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.</p>
-              <p class="about__paragraph-two">
-                Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера,
-                <br />
-                что подтверждает большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою очередь, советуют нас родным и близким.
-              </p>
+              <p class="about__paragraph-two">Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера, что подтверждает большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою очередь, советуют нас родным и близким.</p>
+              <p class="about__paragraph-three">Каждое доверие для нас важно, поэтому мы стараемся делать работу максимально качественно и честно, чтобы каждый клиент оставался довольным и мог смело рекомендовать нас дальше.</p>
 
               <div class="about__read-more">
                 <img src="img/readMore.svg" alt="sign read more" />
@@ -220,11 +215,11 @@
                 </div>
               </div>
               <!--swiper-wrapper -->
-              <div class="swiper-pagination"></div>
+              <div class="swiper-pagination mobile-pagination"></div>
             </div>
             <!---swiper mobile-swiper--->
 
-            <!---tablet-desktop--->
+            <!----------tablet-desktop------------------->
 
             <div class="grid tablet-grid desktop-grid">
               <div class="content-card">
@@ -290,7 +285,7 @@
             </div>
           </div>
 
-          <!--------------------------------------------->
+          <!-------------------SWIPER-CONTENT-2--------------------------->
           <div class="tech-content">
             <h3>Ремонт различных видов техники</h3>
 
@@ -315,10 +310,10 @@
                   <a href="#"><img src="img/brands/go.svg" alt="logo-go" /></a>
                 </div>
               </div>
+              <div class="swiper-pagination tech-pagination"></div>
             </div>
 
-            <div class="swiper-pagination tech-pagination"></div>
-            <div class="swiper-scrollbar tech-scrollbar"></div>
+            <!----------tablet-desktop------------------->
 
             <div class="grid tech-grid">
               <div class="tech-card">
@@ -353,7 +348,7 @@
               <button id="toggleBtnTech"><span>Показать все</span></button>
             </div>
           </div>
-          <!--------------------------------------------->
+          <!-----------------SWIPER-CONTENT-3---------------------------->
           <div class="price-content">
             <h3>цены на услуги</h3>
 
@@ -467,17 +462,16 @@
               </div>
               <!---swiper-wrapper-->
 
-              <div class="swiper-pagination repair-pagination"></div>
-              <div class="swiper-scrollbar repair-scrollbar"></div>
+              <div class="swiper-pagination price-pagination"></div>
             </div>
             <!----swiper swiper-price"-->
           </div>
           <!----price-content-->
 
-          <!--------------------------------------------->
+          <!----------tablet-desktop------------------->
           <div class="table-price-wrapper">
+            <h3>цены на услуги</h3>
             <div class="price-content-desk">
-              <h3>цены на услуги</h3>
               <table class="price-table">
                 <tr class="price-title">
                   <th>Ремонтные услуги</th>
@@ -557,7 +551,8 @@
 
         <footer class="footer">
           <div class="footter__top">
-            <span>© 2019 CPS</span> <br>
+            <span>© 2019 CPS</span>
+            <br />
             <span class="footer__credits">Разработано командой Apesong</span>
           </div>
           <div class="footer__privacy-policy">Политика конфиденциальности</div>
