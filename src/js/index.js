@@ -83,11 +83,8 @@ const swiper = new Swiper(".mobile-swiper", {
 const swiper2 = new Swiper(".swiper-tech", {
   slidesPerView: "auto",
   spaceBetween: 16,
-  loop: true,   
-  loopAdditionalSlides: 1,        
-  grabCursor: true,
   pagination: {
-    el: ".swiper-tech .tech-pagination",
+    el: ".tech-pagination",
     clickable: true,
   }
  
@@ -98,10 +95,6 @@ const swiper2 = new Swiper(".swiper-tech", {
 const swiper3 = new Swiper(".swiper-price", {
   slidesPerView: "auto",
   spaceBetween: 16,
-  loop: true,    
-   loopAdditionalSlides: 1,        
- 
- 
   pagination: {
     el: ".swiper-price .price-pagination",
     clickable: true,

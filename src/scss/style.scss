@@ -15,106 +15,6 @@ body {
   color: $text;
   line-height: 20px;
 }
-.main {
-  width: 100%;
-}
-.container {
-  @include flex-wrap;
-  width: 100%;
-  max-width: 100%;
-
-  background: $bgColor;
-  padding-right: 16px;
-
-  margin-left: 0;
-
-  font-weight: normal;
-}
-/* ================= HEADER================= */
-.header__inner,
-.main__menu,
-.about__text {
-  max-width: 100%;
-  width: 100vw;
-}
-
-.header__inner {
-  position: relative;
-  @include left-right-0;
-  width: 100vw;
-  // width: 100%;
-
-  background: $bgMenuColor;
-  height: $header-height;
-  padding: $header-padding;
-  @include display-flex;
-}
-
-/* ================= hamburger-button ================= */
-
-.header__left-icons {
-  position: relative;
-
-  .header__hamburger {
-    border: none;
-    background: transparent;
-    padding-bottom: 5px;
-  }
-
-  .header__hamburger-box {
-    padding-bottom: 5px;
-  }
-
-  .header__hamburger-button {
-    position: absolute;
-    left: 10px;
-    top: 20px;
-  }
-}
-
-.header__logo {
-  width: 96px;
-  height: $logo-height;
-  margin-left: 5px;
-  margin-bottom: -20px;
-}
-
-.divider {
-  &--burger,
-  &--setting {
-    display: none;
-  }
-  &--logo {
-    position: relative;
-    top: -5px;
-    left: 15px;
-    height: 32px;
-    color: rgba(234, 234, 234, 1);
-    border-radius: 1px;
-    opacity: 1;
-  }
-}
-
-.header__menu {
-  margin-right: 10px;
-  @include display-flex;
-  gap: 16px;
-
-  .header__icons {
-    display: none;
-  }
-}
-
-.header__list {
-  display: flex;
-  align-content: flex-end;
-  gap: 10px;
-
-  span {
-    display: none;
-  }
-}
-
 /* ================= SIDEBAR ================= */
 
 .aside {
@@ -122,7 +22,8 @@ body {
   @include left-right-0;
 
   width: clamp(280px, 85vw, 360px);
-  height: 100vh;
+  height: 100%;
+  z-index: 9999;
   padding: 20px 16px;
   background: $bgMenuColor;
   letter-spacing: -0.2px;
@@ -253,12 +154,110 @@ body {
   }
 }
 
+/* ================= HEADER================= */
+.main {
+  width: 100%;
+}
+.container {
+  width: 100%;
+  margin: 0 auto;
+  background: $bgColor;
+  margin-left: 0;
+  font-weight: normal;
+}
+
+.main__menu,
+.about__text {
+  width: 100%;
+}
+
+.header__inner {
+  position: relative;
+  @include left-right-0;
+  padding: 24px 16px;
+
+  background: $bgMenuColor;
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+ 
+}
+
+/* ================= hamburger-button ================= */
+
+.header__left-icons {
+  position: relative;
+
+  .header__hamburger {
+    border: none;
+    background: transparent;
+    padding-bottom: 5px;
+  }
+  
+
+  .header__hamburger-box {
+    padding-bottom: 5px;
+  }
+
+  .header__hamburger-button {
+    position: absolute;
+    left: 10px;
+    top: 20px;
+  }
+
+}
+
+.header__logo {
+  width: 96px;
+  height: $logo-height;
+  margin-left: 5px;
+  margin-bottom: -20px;
+}
+
+.divider {
+  &--burger,
+  &--setting {
+    display: none;
+  }
+  &--logo {
+    position: relative;
+    top: -5px;
+    left: 15px;
+    height: 32px;
+    color: rgba(234, 234, 234, 1);
+    border-radius: 1px;
+    opacity: 1;
+  }
+}
+
+.header__menu {
+  margin-right: 10px;
+  @include display-flex;
+  gap: 16px;
+
+  .header__icons {
+    display: none;
+  }
+  
+}
+
+.header__list {
+  display: flex;
+  align-content: flex-end;
+  gap: 10px;
+
+  span {
+    display: none;
+  }
+}
+
 /* ================= MAIN ================= */
 
 .services__container {
   position: relative;
   @include left-right-0;
-  width: 100vw;
+  width: 100%;
   padding: 0 16px;
 }
 
@@ -318,7 +317,6 @@ body {
     font-weight: 400;
     letter-spacing: 0.2px;
     padding-left: 16px;
-
     color: $aboutColor;
 
     span {
@@ -363,7 +361,7 @@ body {
 }
 .about__img {
   width: 100%;
-  display: block;
+  display: flex;
   height: auto;
   border-radius: 10px;
 }
@@ -425,11 +423,6 @@ h3 {
 
 .mobile-swiper .swiper-pagination {
   width: 100%;
-  z-index: 10;
-  position: absolute;
-  left: 3%;
-  text-align: start;
-
 }
 .swiper-pagination-bullet {
   width: 10px;
@@ -438,7 +431,6 @@ h3 {
   margin: 0 4px;
   background-color: $paginationColor;
   opacity: 1;
-  
 }
 
 .swiper-pagination-bullet-active {
@@ -491,25 +483,26 @@ h3 {
   padding-bottom: 35px;
   padding-top: 24px;
 }
-.swiper-tech .tech-pagination {
-  position: absolute;
 
-  left: 5%;
+.tech-pagination {
   width: 100%;
   display: flex;
-  align-content: flex-start;
+  align-content: center;
+  justify-content: center;
 }
+
 .swiper-tech .tech-pagination .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
   border-radius: 50%;
   margin: 0 4px;
-  opacity: 1;
+  opacity: 0.4;
   background-color: $paginationColor;
 }
 
 .swiper-tech .tech-pagination .swiper-pagination-bullet-active {
   background-color: $paginationColorActive;
+  opacity: 1;
 }
 .see-more-btn,
 .tech-grid,
@@ -525,7 +518,7 @@ h3 {
 
 .price-content {
   padding-top: 10px;
-  padding-bottom: 50px;
+  padding-bottom: 16px;
 }
 
 .swiper-price {
@@ -560,14 +553,7 @@ h3 {
 }
 
 .swiper-price .swiper-pagination {
-  position: absolute;
-
-  left: 3%;
   width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  gap: 8px;
-  z-index: 1000;
 }
 
 .swiper-price .swiper-pagination .swiper-pagination-bullet {
@@ -614,8 +600,7 @@ h3 {
   margin-left: 8px;
 }
 .price-table,
-.price-content-desk
- {
+.price-content-desk {
   display: none;
 }
 .table-price-wrapper > h3 {
@@ -623,28 +608,28 @@ h3 {
 }
 /* ========= PRICE-NOTICE========== */
 .price__notice {
-  width: 100%;
-  width: 300px;
+  width: 80%;
   padding-left: 16px;
   color: $aboutColor;
- 
+  display: flex;
+  flex-direction: column;
 }
 .price__notice-text {
   font-size: 14px;
   font-weight: 400;
   font-family: 'TTLakesRegular';
 }
+
 .price__notice-link {
   color: rgba(27, 28, 33, 1);
   font-family: 'TTLakesMedium';
-
   padding-top: 20px;
 }
+
 .price__notice-action img {
-  position: relative;
-  top: -23px;
-  left: 102px;
+  vertical-align: middle;
 }
+
 .footer {
   display: flex;
   align-content: center;
@@ -653,7 +638,7 @@ h3 {
   flex-direction: column;
   gap: 16px;
   padding-bottom: 20px;
-  padding-top: 20px;
+  padding-top: 40px;
   color: rgba(126, 126, 130, 1);
   border-top: 1px solid rgba(217, 255, 245, 1);
   font-size: 14px;
@@ -664,11 +649,8 @@ h3 {
 @media (min-width: 768px) {
   .container {
     width: 100%;
-    max-width: 100%;
     position: relative;
     @include left-right-0;
-
-    padding-right: 24px;
   }
 
   .header__menu {
@@ -679,7 +661,7 @@ h3 {
   }
 
   .header__menu-icon {
-    display: block;
+    display: flex; /////block
   }
   .header__left-icons {
     display: flex;
@@ -745,8 +727,6 @@ h3 {
       flex: 1;
       width: 100%;
       padding-left: 24px;
-
-    
     }
     &__paragraph-two {
       display: -webkit-box;
@@ -869,7 +849,6 @@ h3 {
     justify-content: start;
     padding-left: 30px;
     padding-right: 24px;
-   
   }
 
   .tech-card {
@@ -931,8 +910,8 @@ h3 {
   .price-content-desk {
     display: block;
   }
-   .table-price-wrapper h3 {
-   display: block;
+  .table-price-wrapper h3 {
+    display: block;
     width: 100%;
     padding: 32px 24px;
   }
@@ -940,14 +919,13 @@ h3 {
   .table-price-wrapper {
     overflow-x: auto;
     width: 100%;
-     padding-top: 24px;
+    padding-top: 24px;
   }
 
   .price-table {
     display: table;
     width: 100%;
     border-collapse: collapse;
-   
   }
 
   .price-content-desk {
@@ -1001,15 +979,7 @@ h3 {
   /* ===== PRICE-NOTICE======= */
 
   .price__notice {
-    min-width: 70%;
-    padding-left: 24px;
-    padding-top: 25px;
-
-    .price__notice-action img {
-      position: relative;
-      top: -23px;
-      left: 300px;
-    }
+    padding: 25px 24px;
   }
 
   /* ====== TABLET-FOOTER======= */
@@ -1087,8 +1057,8 @@ h3 {
     position: fixed;
     @include left-right-0;
     max-width: 280px;
-    height: 100vh;
-    /*overflow: hidden;(*/
+    height: 100%;
+    overflow: hidden;
     box-shadow: none;
     transform: none;
     padding-top: 30px;
@@ -1194,9 +1164,8 @@ h3 {
       margin-top: -30px;
     }
     &__paragraph-two {
-      display: block;            
+      display: block;
       overflow: visible;
-   
     }
 
     &__paragraph-three {
@@ -1312,9 +1281,10 @@ h3 {
     gap: 32px;
     justify-content: start;
     padding-left: 32px;
+    padding-top: 32px;
   }
   .hide-tech {
-    display: block;
+    display: grid;
   }
   .hide-desk-tech {
     display: none;
@@ -1350,20 +1320,11 @@ h3 {
   }
   /* ======== PRICE-NOTICE-DESK======= */
   .price__notice {
-    margin-top: 32px;
-    min-width: 50%;
     padding-left: 32px;
     padding-bottom: 30px;
   }
 
-  /*.price__notice-action img {
-    position: relative;
-    top: -23px;
-    left: 300px;
-  }*?
-
- 
-   /* =======FOOTER============ */
+  /* =======FOOTER============ */
   .footer {
     display: flex;
     align-content: center;

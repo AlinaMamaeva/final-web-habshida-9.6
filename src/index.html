@@ -8,58 +8,8 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
-    <div class="page">
-      <div class="container">
-        <!---------------HEADER-------------------->
-        <div class="header open">
-          <div class="header__inner">
-            <div class="header__left-icons">
-              <button class="header__hamburger" aria-label="Open menu">
-                <img class="header__hamburger-box" src="img/back.svg" alt="icon" />
-                <img class="header__hamburger-button" src="img/icon.svg" alt="icon" />
-              </button>
-              <img class="divider divider--burger" src="img/divider.svg" alt="divider" />
-
-              <a class="header__logo" href="/">
-                <img src="img/Group.svg" alt="logo" />
-                <img class="divider divider--logo" src="img/divider.svg" alt="logo" />
-              </a>
-            </div>
-
-            <nav class="header__menu">
-              <ul class="header__icons header__menu-icons">
-                <li>
-                  <a class="header__menu-icon" href="/"><img src="img/call.svg" alt="call" /></a>
-                </li>
-                <li>
-                  <a class="header__menu-icon" href="/"><img src="img/chat.svg" alt="chat" /></a>
-                </li>
-                <li>
-                  <a class="header__menu-icon" href="/"><img src="img/profile.svg" alt="profile" /></a>
-                </li>
-              </ul>
-
-              <ul class="header__list">
-                <img class="divider divider--setting" src="img/divider.svg" alt="" />
-                <span>Оставить заявку</span>
-                <li>
-                  <a class="header__menu-item" href="/"><img src="img/repair.svg" alt="settings" /></a>
-                </li>
-                <span>Статус ремонта</span>
-                <li>
-                  <a class="header__menu-item" href="/"><img src="img/search.svg" alt="search" /></a>
-                </li>
-              </ul>
-              <!--header__menu-list--->
-            </nav>
-            <!--header__menu--->
-          </div>
-          <!--header__inner--->
-        </div>
-        <!--header-->
-
-        <!---------------ASIDE-------------------->
-        <aside class="aside">
+      <!---------------ASIDE-------------------->
+     <aside class="aside">
           <!--container css-->
           <div class="aside__header">
             <nav class="aside__nav">
@@ -115,6 +65,58 @@
             <button class="lang-switcher__btn">CH</button>
           </div>
         </aside>
+    <div class="page">
+      <div class="container">
+        <!---------------HEADER-------------------->
+        <div class="header open">
+          <div class="header__inner">
+            <div class="header__left-icons">
+              <button class="header__hamburger" aria-label="Open menu">
+                <img class="header__hamburger-box" src="img/back.svg" alt="icon" />
+                <img class="header__hamburger-button" src="img/icon.svg" alt="icon" />
+              </button>
+              <img class="divider divider--burger" src="img/divider.svg" alt="divider" />
+
+              <a class="header__logo" href="/">
+                <img src="img/Group.svg" alt="logo" />
+                <img class="divider divider--logo" src="img/divider.svg" alt="logo" />
+              </a>
+            </div>
+
+            <nav class="header__menu">
+              <ul class="header__icons header__menu-icons">
+                <li>
+                  <a class="header__menu-icon" href="/"><img src="img/call.svg" alt="call" /></a>
+                </li>
+                <li>
+                  <a class="header__menu-icon" href="/"><img src="img/chat.svg" alt="chat" /></a>
+                </li>
+                <li>
+                  <a class="header__menu-icon" href="/"><img src="img/profile.svg" alt="profile" /></a>
+                </li>
+              </ul>
+
+              <ul class="header__list">
+                <img class="divider divider--setting" src="img/divider.svg" alt="" />
+                <span>Оставить заявку</span>
+                <li>
+                  <a class="header__menu-item" href="/"><img src="img/repair.svg" alt="settings" /></a>
+                </li>
+                <span>Статус ремонта</span>
+                <li>
+                  <a class="header__menu-item" href="/"><img src="img/search.svg" alt="search" /></a>
+                </li>
+              </ul>
+              <!--header__menu-list--->
+            </nav>
+            <!--header__menu--->
+          </div>
+          <!--header__inner--->
+        </div>
+        <!--header-->
+
+      
+       
 
         <main>
           <section class="services">
@@ -543,8 +545,10 @@
             <p class="price__notice-text">Все цены указаны с учетом НДС. Стоимость ремонта указана на единичную услугу. Для получения коммерческого предложения на постоянное обслуживание, оставьте заявку.</p>
 
             <div class="price__notice-action">
-              <p class="price__notice-link">Получить коммерческое предложение</p>
+              <p class="price__notice-link">
+                Получить коммерческое предложение
               <img src="img/more.svg" alt="icon more" />
+            </p>
             </div>
           </div>
         </main>
