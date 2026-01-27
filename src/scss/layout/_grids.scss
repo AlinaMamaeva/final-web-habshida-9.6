@@ -1,0 +1,351 @@
+@use '../base/colors' as *;
+@use '../base/fonts' as *;
+@use '../base/mixins' as *;
+@use '../base/variables' as *;
+/* ======================= GRID-TABLET ======================== */
+@media (min-width: 768px) {
+  h3 {
+    width: 100%;
+    padding: 16px 24px;
+  }
+  .mobile-swiper,
+  .hide-tablet,
+  .desktop-grid {
+    display: none;
+  }
+
+  .tablet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 240px);
+    justify-content: start;
+    gap: 24px;
+    padding-top: 24px;
+    padding-left: 24px;
+  }
+  .content-card,
+  .hide-desktop {
+    min-width: 224px;
+
+    height: 72px;
+    margin: 0 auto;
+
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid #eaeaea;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+  }
+  .hide-tablet {
+    display: none;
+  }
+
+  .swiper__content {
+    height: auto;
+  }
+
+  .see-more-btn {
+    padding-top: 24px;
+    padding-left: 23px;
+    display: flex;
+    align-content: center;
+    gap: 10px;
+  }
+  button {
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  #toggleBtn span {
+    font-family: 'TTLakesNeueTrialMedium';
+    color: $aboutColor;
+    font-weight: 500;
+    font-size: 16px;
+  }
+  .see-more-btn {
+    padding-bottom: 32px;
+  }
+  .see-more-btn img {
+    transition: transform 0.3s ease;
+  }
+  .see-more-btn img.rotated {
+    transform: rotate(180deg);
+  }
+  .force-show {
+    display: flex;
+  }
+
+  /* ==========GRID-CONTENT-2======= */
+  .swiper-tech {
+    display: none;
+  }
+  .tech-content {
+    padding: 0;
+  }
+  h3 {
+    width: 100%;
+    padding: 32px 24px;
+  }
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    justify-content: start;
+    padding-left: 30px;
+    padding-right: 24px;
+    padding-top: 24px;
+  }
+
+  .tech-card {
+    width: 214px;
+    position: relative;
+    height: 160px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    background: $bgMenuColor;
+    box-sizing: border-box;
+    color: $aboutColor;
+  }
+
+  .tech-card a {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .hide-tech {
+    display: none;
+  }
+
+  .see-more-btn-tech {
+    padding-left: 24px;
+    padding-top: 24px;
+    padding-bottom: 8px;
+
+    display: flex;
+    align-content: center;
+    gap: 10px;
+  }
+  button {
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  #toggleBtnTech span {
+    font-family: 'TTLakesNeueTrialMedium';
+    color: $aboutColor;
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  .see-more-btn-tech img {
+    transition: transform 0.3s ease;
+  }
+  .see-more-btn-tech img.rotated {
+    transform: rotate(180deg);
+  }
+  .force-show {
+    display: flex;
+  }
+  /* ==========TABLET-GRID-CONTENT-3======== */
+
+  .price-content {
+    display: none;
+  }
+  .price-content-desk {
+    display: block;
+  }
+  .table-price-wrapper h3 {
+    display: block;
+    width: 100%;
+    padding: 32px 24px;
+  }
+
+  .table-price-wrapper {
+    overflow-x: auto;
+    width: 100%;
+    padding-top: 24px;
+    color: $aboutColor;
+    font-weight: 400;
+  }
+
+  .price-table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .price-content-desk {
+    width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .price-title th {
+    text-align: left;
+    padding: 16px 24px;
+    vertical-align: middle;
+    color: $text;
+    font-weight: 500;
+  }
+
+  .price-table tr {
+    border-bottom: 1px solid rgba(234, 234, 234, 1);
+  }
+  .price-table tr:first-child,
+  .price-table tr:last-child {
+    border-bottom: none;
+  }
+  .price-table td {
+    padding: 16px 23px;
+  }
+
+  .price-info {
+    background: $bgMenuColor;
+    border-radius: 6px;
+    padding: 24px;
+  }
+
+  .btn__price {
+    right: 16px;
+    bottom: 16px;
+    width: 120px;
+    height: 32px;
+    border: none;
+    border-radius: 16px;
+    background-color: $btnColor;
+  }
+
+  .btn__price span {
+    color: $bgMenuColor;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .btn__price img {
+    margin-left: 8px;
+  }
+}
+
+/* ==========DESK-SWIPER-CONTENT-1======= */
+@media (min-width: 1120px) {
+  .desktop-grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, 240px);
+    justify-content: start;
+    gap: 32px;
+    padding-left: 32px;
+  }
+
+  .content-card,
+  .hide-tablet {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    padding: 0 16px;
+
+    width: 100%;
+    height: 72px;
+    margin: 0 auto;
+
+    background: $bgMenuColor;
+    border-radius: 5px;
+    border: 1px solid #eaeaea;
+    box-sizing: border-box;
+  }
+
+  .hide-desktop,
+  .swiper-slide,
+  .mobile-swiper {
+    display: none;
+  }
+
+  .see-more-btn-tech {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    transition: padding-top 0.3s ease;
+
+    font-size: 16px;
+  }
+
+  .see-more-btn.open {
+    padding-top: 22px;
+  }
+  .see-more-btn img {
+    transition: transform 0.3s ease;
+    padding-left: 10px;
+  }
+  .see-more-btn img.rotated {
+    transform: rotate(180deg);
+  }
+
+  button {
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .see-more-btn img {
+    transition: transform 0.3s ease;
+  }
+  .see-more-btn img.rotated {
+    transform: rotate(180deg);
+  }
+  .force-show {
+    display: flex;
+  }
+
+  /* ========DESK-SWIPER-CONTENT-2========== */
+
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 240px);
+
+    gap: 32px;
+    justify-content: start;
+    padding-left: 32px;
+    padding-top: 32px;
+  }
+  .hide-tech {
+    display: grid;
+  }
+  .hide-desk-tech {
+    display: none;
+  }
+  .force-show {
+    display: flex;
+  }
+  .see-more-btn-tech {
+    display: block;
+    padding-left: 32px;
+  }
+  .see-more-btn-tech span {
+    margin-left: 5px;
+  }
+
+  .see-more-btn-tech img {
+    transition: transform 0.3s ease;
+  }
+
+  .see-more-btn-tech img.rotated {
+    transform: rotate(180deg);
+    padding-left: 0;
+  }
+
+  /* ======DESK-SWIPER-CONTENT-3========= */
+  .table-price-wrapper {
+    padding-bottom: 10px;
+  }
+  .price-table {
+    display: table;
+    width: 100%;
+    max-width: 100%;
+  }
+}

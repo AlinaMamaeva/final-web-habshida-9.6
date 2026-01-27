@@ -1,0 +1,43 @@
+@use '../base/colors' as *;
+@use '../base/fonts' as *;
+@use '../base/mixins' as *;
+@use '../base/variables' as *;
+
+.price__notice {
+  width: 80%;
+  color: $aboutColor;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 16px;
+  letter-spacing: 0.2px;
+  padding-bottom: 30px;
+}
+
+.price__notice-text {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: 'TTLakesRegular';
+  color: $aboutColor;
+}
+
+.price__notice-link {
+  color: $aboutColor;
+  font-family: 'TTLakesMedium';
+}
+
+.price__notice-action img {
+  vertical-align: middle;
+}
+@media (min-width: 768px) {
+  .price__notice {
+    width: 60%;
+    padding: 25px 24px;
+  }
+}
+@media (min-width: 1120px) {
+  .price__notice {
+    padding-left: 32px;
+    padding-bottom: 30px;
+  }
+}

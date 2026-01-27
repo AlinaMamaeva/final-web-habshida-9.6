@@ -1,0 +1,51 @@
+@use '../base/colors' as *;
+@use '../base/fonts' as *;
+@use '../base/mixins' as *;
+@use '../base/variables' as *;
+.footer {
+  display: flex;
+
+  align-content: center;
+  justify-content: space-between;
+  text-align: center;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 20px;
+  padding-top: 40px;
+  color: $text;
+  border-top: 1px solid $dividerColor;
+  font-size: 14px;
+  font-family: 'TTLakesMedium';
+}
+
+@media (min-width: 768px) {
+  .footer {
+    @include footer-flex-center-row;
+
+    gap: 23px;
+    padding: 23px;
+
+    &__credits,
+    &__privacy-policy {
+      text-wrap: nowrap;
+    }
+  }
+}
+
+@media (min-width: 1120px) {
+  .footer {
+     @include footer-flex-center-row;
+    justify-content: space-between;
+    gap: 32px;
+    padding: 32px;
+
+    &__credits,
+    &__privacy-policy {
+      text-wrap: nowrap;
+    }
+    &__disclaimer {
+      min-width: 320px;
+      align-items: flex-end;
+    }
+  }
+}

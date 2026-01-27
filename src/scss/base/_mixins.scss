@@ -22,3 +22,16 @@
   flex-direction: column;
  
 }
+
+@mixin aside-flex-column {
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+@mixin footer-flex-center-row {
+   display: flex;
+    align-content: center;
+    text-align: center;
+    flex-direction: row;
+}

@@ -1,0 +1,233 @@
+@use '../base/colors' as *;
+@use '../base/fonts' as *;
+@use '../base/mixins' as *;
+@use '../base/variables' as *;
+
+ .swiper__content {
+  margin-top: 24px;
+  height: auto;
+  width: 100%;
+}
+h3 {
+  min-width: auto;
+  padding: 1em 1em;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: $text;
+  font-family: 'TTLakesRegular';
+  letter-spacing: -0.2px;
+
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: break-word;
+  background: linear-gradient(to left, $bgMenuColor, $bgColor);
+  border-top: 2px solid rgba(217, 255, 245, 1);
+}
+
+.mobile-swiper {
+  position: relative;
+  padding-bottom: 40px;
+  padding-top: 24px;
+  overflow: hidden;
+}
+.mobile-swiper .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  gap: 16px;
+
+  flex-shrink: 0;
+  max-width: 240px;
+  height: 72px;
+
+  background: #fff;
+  border-radius: 5px;
+  border: 1px solid #eaeaea;
+}
+
+.mobile-swiper .swiper-pagination {
+  width: 100%;
+}
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 4px;
+  background-color: $paginationColor;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $paginationColorActive;
+}
+
+.swiper-tech .swiper-wrapper {
+  display: flex;
+}
+
+.content-card,
+.hide-tablet,
+.hide-desktop,
+.see-more-btn {
+  display: none;
+}
+
+/* ======== MOBILE-SWIPER-CONTENT-2========= */
+
+.swiper-tech .swiper-slide {
+  width: 240px;
+  height: 160px;
+
+  border: 1px solid #eaeaea;
+  border-radius: 6px;
+  background: $bgMenuColor;
+  color: $aboutColor;
+  position: relative;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex: 0 0 auto;
+}
+.swiper-wrapper {
+  padding-left: 16px;
+}
+.swiper-tech .swiper-slide a img {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 40px;
+  height: auto;
+}
+
+.swiper-tech {
+  padding-bottom: 35px;
+  padding-top: 24px;
+}
+
+.tech-pagination {
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.swiper-tech .tech-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 4px;
+  opacity: 0.4;
+  background-color: $paginationColor;
+}
+
+.swiper-tech .tech-pagination .swiper-pagination-bullet-active {
+  background-color: $paginationColorActive;
+  opacity: 1;
+}
+.see-more-btn,
+.tech-grid,
+.see-more-btn-tech {
+  display: none;
+}
+
+.swiper-tech .swiper-wrapper {
+  display: flex;
+}
+
+/* ==========MOBILE-SWIPER-CONTENT-3======== */
+
+.price-content {
+  padding-top: 10px;
+  padding-bottom: 16px;
+}
+
+.swiper-price {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 40px;
+  padding-top: 24px;
+}
+.swiper-price .price-card {
+  display: flex;
+  gap: 16px;
+  width: 260px;
+  height: 200px;
+  border: 1px solid $bgMenuColor;
+  background: $bgMenuColor;
+}
+
+.price-card {
+  flex: 0 0 auto;
+  width: 260px;
+  height: 200px;
+  border: 1px solid $bgMenuColor;
+  border-radius: 6px;
+  background: $bgMenuColor;
+  position: relative;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.swiper-price .swiper-pagination {
+  width: 100%;
+}
+
+.swiper-price .swiper-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: $paginationColor;
+  cursor: pointer;
+  opacity: 1;
+}
+.swiper-price .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: $paginationColorActive;
+}
+
+.btn__price-card {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  width: 120px;
+  height: 32px;
+  border: none;
+  border-radius: 16px;
+  background-color: rgba(255, 62, 121, 1);
+}
+.price-card__row h4 {
+  font-weight: 500;
+  color: $text;
+  font-size: 14px;
+}
+.price-card__row p {
+  font-size: 14px;
+  color: $asideTextColor;
+}
+
+.btn__price-card span {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 12px;
+
+  font-weight: 700;
+}
+.btn__price-card img {
+  margin-left: 8px;
+}
+.price-table,
+.price-content-desk {
+  display: none;
+}
+.table-price-wrapper > h3 {
+  display: none;
+}
+

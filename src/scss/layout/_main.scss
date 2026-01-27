@@ -1,0 +1,53 @@
+@use '../base/colors' as *;
+@use '../base/fonts' as *;
+@use '../base/mixins' as *;
+@use '../base/variables' as *;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+body {
+  font-family: 'TTLakesRegular';
+  color: $text;
+  line-height: 20px;
+  
+}
+.main {
+  width: 100%;
+
+}
+.container {
+  width: 100%;
+  margin: 0 auto;
+  background: $bgColor;
+ 
+  font-weight: normal;
+}
+
+.main__menu,
+.about__text {
+  width: 100%;
+}
+
+
+@media (min-width: 768px) {
+  .container {
+    width: 100%;
+    position: relative;
+    @include left-right-0;
+  }
+
+}
+
+@media (min-width: 1120px) {
+  
+  .about__text,
+  .main__menu {
+    width: auto;
+  }
+
+ 
+}
